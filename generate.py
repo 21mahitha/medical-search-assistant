@@ -5,12 +5,13 @@ from retrieve import retrieve
 from db import save_message, get_chat_history, update_chat_title, get_chat_files
 import chromadb
 from sentence_transformers import SentenceTransformer
+from embedding_model import model as embed_model
+
 
 load_dotenv()
 client = Groq(api_key=os.getenv("GROQ_API_KEY"))
 MODEL_NAME = "llama-3.3-70b-versatile"
 
-embed_model = SentenceTransformer("all-MiniLM-L6-v2")
 chroma_client = chromadb.PersistentClient(path="data/chroma_db")
 
 RELEVANCE_THRESHOLD = 1.0  # lower distance = more relevant; tune this based on testing

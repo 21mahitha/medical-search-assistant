@@ -1,8 +1,6 @@
 import chromadb
 from sentence_transformers import SentenceTransformer
-
-# load the embedding model (same one used to build the database)
-model = SentenceTransformer("all-MiniLM-L6-v2")
+from embedding_model import model
 
 # connect to the existing ChromaDB database
 client = chromadb.PersistentClient(path="data/chroma_db")
