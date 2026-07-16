@@ -1,0 +1,9 @@
+.venv/
+__pycache__/
+*.pyc
+.env
+data/embedded_chunks.json
+data/qa_pairs.json
+data/chunked_data.json
+data/conversations.db
+data/uploads/
